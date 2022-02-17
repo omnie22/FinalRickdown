@@ -18,7 +18,7 @@ class RMViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RMRepo.getChars()
             if (response.isSuccessful) {
-                Log.d("pausechamp", response.body().toString())
+//                Log.d("pausechamp", response.body().toString())
                 _characters.postValue(response.body())
             }
         }
