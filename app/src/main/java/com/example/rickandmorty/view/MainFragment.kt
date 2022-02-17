@@ -34,7 +34,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getChars()
         viewModel.characters.observe(viewLifecycleOwner){
-            findNavController().navigate(MainFragmentDirections)
+//            findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailsFragment())
         }
     }
 

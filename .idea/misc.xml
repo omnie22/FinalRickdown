@@ -5,8 +5,9 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_details.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_details.xml" value="0.13952465720090143" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.20546885350840716" />
+        <entry key="app/src/main/res/layout/recycler_item.xml" value="0.1234375" />
       </map>
     </option>
   </component>
