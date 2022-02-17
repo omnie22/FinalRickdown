@@ -10,9 +10,11 @@ import com.example.rickandmorty.model.RMCharacter
 class RMAdapter : RecyclerView.Adapter<RMAdapter.RMViewHolder>() {
     private val characters = mutableListOf<RMCharacter>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RMViewHolder {
+        Log.d("boobs", "onCreateViewHolder: ")
         return RMViewHolder.getInstance(parent)
     }
     override fun onBindViewHolder(holder: RMViewHolder, position: Int) {
+        Log.d("ungabunga", "onBindViewHolder: ")
         characters[position].let { holder.loadName(characters[position]) }
     }
     override fun getItemCount(): Int {
@@ -34,6 +36,7 @@ class RMAdapter : RecyclerView.Adapter<RMAdapter.RMViewHolder>() {
         }
         companion object {
             fun getInstance(parent: ViewGroup): RMViewHolder {
+                Log.d("get", "getInstance: ")
                 val binding = RecyclerItemBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,

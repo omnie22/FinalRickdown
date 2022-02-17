@@ -9,16 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/search_bar"
-        app:layout_constraintBottom_toTopOf="@id/search_bar"
-        app:layout_constraintStart_toStartOf="parent"/>
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:id="@+id/search_bar"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/search_bar"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:id="@+id/search_bar"
+            app:layout_constraintBottom_toTopOf="@id/search_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="number id"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:id="@+id/search_btn"
+            app:layout_constraintStart_toEndOf="@id/search_bar"
+            app:layout_constraintTop_toTopOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVCharacters"
-        tools:listitem="@layout/recycler_item"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

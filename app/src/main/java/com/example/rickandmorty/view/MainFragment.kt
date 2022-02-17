@@ -35,11 +35,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.RVCharacters.adapter = RMAdapter
         viewModel.getChars()
         viewModel.characters.observe(viewLifecycleOwner){
 //            findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailsFragment())
             viewModel.characters.value?.let { it1 -> RMAdapter.updateChars(it1.results) }
             Log.d("pausechamp", viewModel.characters.value?.results.toString())
+        }
+        binding.searchBtn.setOnClickListener{
+            Log.d("TAG", binding.searchBar.editableText.toString())
+            viewModel.getCharacter(binding.searchBar.editableText.toString())
+        }
+        viewModel.characterDetail.observe(viewLifecycleOwner){
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailsFragment())
         }
     }
 
