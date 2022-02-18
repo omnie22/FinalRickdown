@@ -36,7 +36,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.RVCharacters.adapter = RMAdapter
         viewModel.getChars()
         viewModel.characters.observe(viewLifecycleOwner){
-//            RMAdapter.updateChars(it.results)
             Log.d("observer", it.results.toString())
             binding.RVCharacters.adapter = RMAdapter(it.results)
         }

@@ -9,12 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:layout_width="100dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:id="@+id/search_bar"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/search_bar"-->
-<!--        app:layout_constraintStart_toStartOf="parent"/>-->
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="100dp"
             android:layout_height="40dp"
@@ -35,6 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/recycler_item"
         android:layout_width="0dp"
         android:layout_height="0dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
