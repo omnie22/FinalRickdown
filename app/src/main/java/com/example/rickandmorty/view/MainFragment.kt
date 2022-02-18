@@ -1,6 +1,5 @@
 package com.example.rickandmorty.view
 
-import android.graphics.Path
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.rickandmorty.R
 import com.example.rickandmorty.RMViewModel
 import com.example.rickandmorty.adapter.RMAdapter
 import com.example.rickandmorty.databinding.FragmentMainBinding
+import kotlin.math.log
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     private var _binding: FragmentMainBinding? = null
@@ -38,12 +36,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.RVCharacters.adapter = RMAdapter
         viewModel.getChars()
         viewModel.characters.observe(viewLifecycleOwner){
-//            findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailsFragment())
-            viewModel.characters.value?.let { it1 -> RMAdapter.updateChars(it1.results) }
-            Log.d("pausechamp", viewModel.characters.value?.results.toString())
+//            RMAdapter.updateChars(it.results)
+            Log.d("observer", it.results.toString())
+            binding.RVCharacters.adapter = RMAdapter(it.results)
         }
         binding.searchBtn.setOnClickListener{
-            Log.d("TAG", binding.searchBar.editableText.toString())
             viewModel.getCharacter(binding.searchBar.editableText.toString())
         }
         viewModel.characterDetail.observe(viewLifecycleOwner){

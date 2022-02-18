@@ -31,7 +31,6 @@ class RMViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RMRepo.getChar(id)
             if (response.isSuccessful){
-                Log.d("pog", response.body().toString())
                 _characterDetail.postValue(response.body())
             }
         }
